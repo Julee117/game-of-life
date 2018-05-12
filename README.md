@@ -4,5 +4,4 @@ The Game of Life is a cellular automation devised by British mathematician John 
 
 ## Getting Started
 
-Open index.html
-Click start
+Open index.html  Click start
