@@ -3,3 +3,14 @@ canvas {
   margin-left: 35%;
   margin-top: 50px;
 }
+
+div {
+  margin-top: 20px;
+  margin-left: 45%;
+}
+
+button {
+  font-size: 20px;
+  border-radius: 5px;
+  margin-left: 5px;
+}
