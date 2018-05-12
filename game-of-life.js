@@ -5,6 +5,8 @@ let rows = myCanvas.height / pixel;
 let ctx = myCanvas.getContext("2d");
 let grid;
 
+fillRandom();
+
 // make empty 2D array
 function makeGrid(cols, rows) {
   let arr = new Array();
@@ -36,4 +38,17 @@ function drawCanvas() {
       }
     }
   }
+}
+
+function countLiveNeighbors(grid, x, y) {
+  let sum = 0;
+  for (let i = -1; i < 2; i++) {
+    for (let j = -1; j < 2; j++) {
+      let col = ((x + i) % cols) === -1 ? cols - 1 : (x + i) % cols;
+      let row = ((y + j) % rows) === -1 ? rows - 1 : (y + j) % rows;
+      sum += grid[col][row];
+    }
+  }
+  sum -= grid[x][y];
+  return sum
 }
