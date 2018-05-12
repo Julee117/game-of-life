@@ -8,11 +8,11 @@ let fps = 10;
 
 fillRandom();
 
-function startLife() {
+function startGame() {
   setTimeout(function() {
     drawCanvas();
     updateGrid();
-    requestAnimationFrame(startLife);
+    requestAnimationFrame(startGame);
   }, 1000 / fps);
 }
 
