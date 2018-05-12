@@ -1,3 +1,10 @@
+let myCanvas = document.getElementById("canvas")
+let pixel = 20;
+let cols = myCanvas.width / pixel;
+let rows = myCanvas.height / pixel;
+let ctx = myCanvas.getContext("2d");
+let grid;
+
 function makeGrid(cols, rows) {
   let arr = new Array();
   for (let i = 0; i < cols; i++) {
