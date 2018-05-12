@@ -4,8 +4,17 @@ let cols = myCanvas.width / pixel;
 let rows = myCanvas.height / pixel;
 let ctx = myCanvas.getContext("2d");
 let grid;
+let fps = 10;
 
 fillRandom();
+
+function startLife() {
+  setTimeout(function() {
+    drawCanvas();
+    updateGrid();
+    requestAnimationFrame(startLife);
+  }, 1000 / fps);
+}
 
 // make empty 2D array
 function makeGrid(cols, rows) {
