@@ -52,3 +52,24 @@ function countLiveNeighbors(grid, x, y) {
   sum -= grid[x][y];
   return sum
 }
+
+// update new grid with new state value
+function updateGrid() {
+  let update = makeGrid(cols, rows);
+  for (let i = 0; i < cols; i++) {
+    for (let j = 0; j < rows; j++) {
+      let neighbors = countLiveNeighbors(grid, i, j);
+      let currentState = grid[i][j];
+      if (currentState === 0 && neighbors === 3) {
+        update[i][j] = 1;
+      } else if (currentState === 1 && neighbors === 2 || currentState === 1 && neighbors === 3) {
+        update[i][j] = 1;
+      } else if (currentState === 1 && neighbors < 2 || currentState === 1 && neighbors > 3) {
+        update[i][j] = 0;
+      } else {
+        update[i][j] = currentState;
+      }
+    }
+  }
+  grid = update;
+}
